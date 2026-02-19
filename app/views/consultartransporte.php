@@ -9,10 +9,10 @@
 
 <div class="contenedor-tabla">
 
-    <h1>Registro de Transporte</h1>
+    <h1>Consulta de Transporte</h1>
 
     <div class="boton-superior">
-        <a href="index.php?controller=transporte&action=insert_transporte" class="btn-agregar">
+        <a href="index.php?action=registrarTransporte" class="btn-agregar">
             + Registrar Transporte
         </a>
     </div>

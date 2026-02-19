@@ -48,14 +48,15 @@
             include "app/views/consultartransporte.php";
         }
 
+        //Ventana que muestra la informacion de un transporte por su id
         public function editartransporte($id){
-             $usuario = $this -> model -> consultarPorID($id);
-             include "app/views/editartransporte.php";
+            $transporte = $this -> model -> consultarPorID($id);
+            include "app/views/editartransporte.php";
         }
 
         public function eliminartransporte($id){
             if( $this -> model -> eliminartransporte($id)){
-             header("Location: index.php?action=consult");
+             header("Location: index.php?controller=transporte&action=consultarTransporte");
             }else{
                echo "No se puedo eliminar" ;
             }
@@ -64,20 +65,9 @@
 
 
 
-        //metodo para la actualizar registros
+        //metodo para la actualizar registros del transporte elegido
         public function actualizartransporte(){
-            if(isset($_GET['id'])){
-                $id_browser = (int) $_GET['id'];
-
-                $row = $this -> model -> consultarPorID($id_browser);
-
-                include_once "app/views/editartransporte.php";
-
-                return;
-
-        }
-        if(isset($_POST['editar'])){
-            $id = $_POST['id_tran'];
+            $id = $_POST['id'];
             $destino = $_POST['destino'];
             $modo = $_POST['modo'];
             $seguimiento = $_POST['seguimiento'];
@@ -88,13 +78,12 @@
             $update = $this -> model -> actualizartransporte($id, $destino, $modo, $seguimiento, $fechasalida, $placa, $numunidad);
 
             if($update){
-                header("Location: index.php?action=consult"); 
+                header("Location: index.php?controller=transporte&action=consultarTransporte"); 
             }else{
-                header("Location: index.php?action=update"); 
+                //Dentro de este else se puede agregar un mensaje de error ya que si entra aqui significa que
+                //la actualizaicon no se realizo 
             }
         }
-        include_once "app/views/editartransporte.php"; 
-     }
 
      //Metodo para realizar respaldo
      public function realiarRespaldoBD(){

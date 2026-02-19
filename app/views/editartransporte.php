@@ -7,35 +7,35 @@
 </head>
 <body>
     
-<h1> Editar Transporte - <?php echo $placa['placa'] ?></h1>
+<h1> Editar Transporte - <?php echo $transporte['placa'] ?></h1>
 <hr>
 
-<form action="index.php?action=update" method="POST">
+<form action="index.php?controller=transporte&action=updatetransporte" method="POST">
 
 <input type="hidden" name="id" value="<?php echo $id ?>">
     
            <b><label for="destino">Destino: </label></b>
-            <input type="text" name="destino">
+            <input type="text" name="destino" value="<?php echo $transporte['destino'] ?>">
             <br><br>
 
             <b><label for="modo">Tipo de transporte: </label></b>
-            <input type="text" name="modo">
+            <input type="text" name="modo" value="<?php echo $transporte['modo'] ?>">
             <br><br>
 
             <b><label for="seguimiento">Seguimiento: </label></b>
-            <input type="text" name="seguimiento">
+            <input type="text" name="seguimiento" value="<?php echo $transporte['seguimiento'] ?>">
             <br><br>
 
             <b><label for="fechasalida">Fecha de Registro: </label></b>
-            <input type="date" name="fechasalida">
+            <input type="date" name="fechasalida" value="<?php echo $transporte['fechasalida'] ?>">
             <br><br>
 
             <b><label for="placa">Placas: </label></b>
-            <input type="text" name="placa">
+            <input type="text" name="placa" value="<?php echo $transporte['placa'] ?>">
             <br><br>
 
             <b><label for="numunidad">Numero de Unidad: </label></b>
-            <input type="num" name="numunidad">
+            <input type="num" name="numunidad" value="<?php echo $transporte['numunidad'] ?>">
             <br><br>
 
             <button name="editar"> Enviar </enviar>

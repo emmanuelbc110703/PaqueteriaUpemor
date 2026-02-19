@@ -12,7 +12,7 @@
     <h1>Consulta de Paquetes</h1>
 
     <div class="boton-superior">
-        <a href="index.php?controller=paquete&action=insert" class="btn-agregar">
+        <a href="index.php?action=registrarPaquete" class="btn-agregar">
             + Registrar Nuevo
         </a>
     </div>
