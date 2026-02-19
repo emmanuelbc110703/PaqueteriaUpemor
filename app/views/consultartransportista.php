@@ -37,10 +37,10 @@
             <td><?php echo $row['tipolicencia']; ?></td>
             <td><?php echo $row['ultimafecha']; ?></td>
             <td>
-                <a href="index.php?c=transportista&a=editar&id=<?php echo $row['id_conductor']; ?>">
+                <a href="index.php?controller=transportista&action=editar_transportista&id=<?php echo $row['id_conductor']; ?>">
                     <button>Editar</button>
                 </a>
-                <a href="index.php?c=transportista&a=eliminar&id=<?php echo $row['id_conductor']; ?>">
+                <a href="index.php?controller=transportista&action=eliminar_transportista&id=<?php echo $row['id_conductor']; ?>">
                     <button>Eliminar</button>
                 </a>
             </td>

@@ -50,13 +50,13 @@
         }
 
         public function editartransportista($id){
-             $usuario = $this -> model -> consultarPorID($id);
-             include "app/views/editartransportista.php";
+            $transportista = $this -> model -> consultarPorID($id);
+            include "app/views/editartransportista.php";
         }
 
         public function eliminartransportista($id){
             if( $this -> model -> eliminartransportista($id)){
-             header("Location: index.php?action=consult");
+             header("Location: index.php?controller=transportista&action=consultarTransportista");
             }else{
                echo "No se puedo eliminar" ;
             }
@@ -67,18 +67,7 @@
 
         //metodo para la actualizar registros
         public function actualizartransportista(){
-            if(isset($_GET['id'])){
-                $id_browser = (int) $_GET['id'];
-
-                $row = $this -> model -> consultarPorID($id_browser);
-
-                include_once "app/views/editartransportista.php";
-
-                return;
-
-        }
-        if(isset($_POST['editar'])){
-            $id = $_POST['id_conductor'];
+            $id = $_POST['id'];
             $nombre = $_POST['nombre'];
             $edad = $_POST['edad'];
             $telefono = $_POST['telefono'];
@@ -89,13 +78,14 @@
 
             $update = $this -> model -> actualizartransportista($id, $nombre, $edad, $telefono, $correo, $matricula, $tipolicencia, $ultimafecha);
 
+            
             if($update){
-                header("Location: index.php?action=consult"); 
+                header("Location: index.php?controller=transportista&action=consultarTransportista"); 
             }else{
-                header("Location: index.php?action=update"); 
+                //Aqui se puede agregar un mensaje de alerta para cuando la actualizacion sea incorrecta
             }
-        }
-        include_once "app/views/editartransportista.php"; 
+    
+        
      }
 
      //Metodo para realizar respaldo
