@@ -1,0 +1,96 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo */
+body{
+    background: linear-gradient(135deg, #7a0000, #000000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    color:white;
+}
+
+/* Contenedor */
+.contenedor-form{
+    background: rgba(0,0,0,0.9);
+    padding:40px;
+    width:100%;
+    max-width:520px;
+    border-radius:12px;
+    box-shadow:0 0 30px rgba(0,0,0,0.8);
+}
+
+/* Título */
+.contenedor-form h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff4444;
+}
+
+/* Inputs */
+.grupo{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+}
+
+.grupo label{
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+.grupo input{
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    outline:none;
+    transition:0.3s;
+}
+
+.grupo input:focus{
+    border:2px solid #ff4444;
+}
+
+/* Botones */
+.botones{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.btn{
+    background:#a00000;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff1a1a;
+    transform:scale(1.05);
+}
+
+.btn-secundario{
+    background:#444;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:6px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.btn-secundario:hover{
+    background:#666;
+}

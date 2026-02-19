@@ -1,0 +1,109 @@
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Contenedor principal */
+.contenedor-tabla {
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* Botón superior */
+.boton-superior {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+/* Botón agregar */
+.btn-agregar {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #1d4ed8;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* Encabezado */
+thead {
+    background-color: #1e293b;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Filas */
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+/* Acciones */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botón editar */
+.btn-editar {
+    background-color: #f59e0b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #d97706;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background-color: #ef4444;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #dc2626;
+}
