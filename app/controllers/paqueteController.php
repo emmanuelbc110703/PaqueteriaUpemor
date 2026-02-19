@@ -49,13 +49,13 @@
         }
 
         public function editarpaquete($id){
-    $paquete = $this->model->consultarPorID($id);
-    include "app/views/editarpaquete.php";
-}
+            $paquete = $this->model->consultarPorID($id);
+            include "app/views/editarpaquete.php";
+        }
 
         public function eliminarpaquete($id){
             if( $this -> model -> eliminarpaquete($id)){
-             header("Location: index.php?action=consult");
+             header("Location: index.php?action=consultarPaquete");
             }else{
                echo "No se puedo eliminar" ;
             }
@@ -66,46 +66,32 @@
 
         //metodo para la actualizar registros
         public function actualizarpaquete(){
+            $id = $_POST['id_paquete'];
+            $codigoseg = $_POST['codigoseg'];
+            $descripcion = $_POST['descripcion'];
+            $fechareg = $_POST['fechareg'];
+            $peso = $_POST['peso'];
+            $region = $_POST['region'];
+            $direccion = $_POST['direccion'];
 
-    // 🔹 1. Si viene ID por GET → mostrar formulario
-    if(isset($_GET['id'])){
+            $update = $this->model->actualizarpaquete(
+                $id,
+                $codigoseg,
+                $descripcion,
+                $fechareg,
+                $peso,
+                $region,
+                $direccion
+            );
 
-        $id = (int) $_GET['id'];
-        $paquete = $this->model->consultarPorID($id);
-
-        include_once "app/views/editarpaquete.php";
-        return;
-    }
-
-    // 🔹 2. Si viene por POST → actualizar
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        $id = $_POST['id_paquete'];
-        $codigoseg = $_POST['codigoseg'];
-        $descripcion = $_POST['descripcion'];
-        $fechareg = $_POST['fechareg'];
-        $peso = $_POST['peso'];
-        $region = $_POST['region'];
-        $direccion = $_POST['direccion'];
-
-        $update = $this->model->actualizarpaquete(
-            $id,
-            $codigoseg,
-            $descripcion,
-            $fechareg,
-            $peso,
-            $region,
-            $direccion
-        );
-
-        if($update){
-            header("Location: index.php?c=paquete&a=consultar");
-            exit();
-        }else{
-            echo "Error al actualizar";
+            if($update){
+                header("Location: index.php?action=consultarPaquete");
+                exit();
+            }else{
+                echo "Error al actualizar";
+            }
+                
         }
-    }
-}
 
      //Metodo para realizar respaldo
      public function realiarRespaldoBD(){

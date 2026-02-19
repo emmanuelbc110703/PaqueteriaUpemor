@@ -9,7 +9,7 @@
 
 <div class="contenedor-tabla">
 
-    <h1>Registro de Paquetes</h1>
+    <h1>Consulta de Paquetes</h1>
 
     <div class="boton-superior">
         <a href="index.php?controller=paquete&action=insert" class="btn-agregar">
@@ -44,7 +44,7 @@
                         <td><?= $row['direccion']; ?></td>
                         <td class="acciones">
                             <a href="index.php?controller=paquete&action=editarPaquete&id=<?= $row['id_paquete']; ?>" class="btn-editar">Editar</a>
-                            <a href="index.php?controller=paquete&action=eliminar&id=<?= $row['id_paquete']; ?>" class="btn-eliminar">Eliminar</a>
+                            <a href="index.php?controller=paquete&action=eliminarPaquete&id=<?= $row['id_paquete']; ?>" class="btn-eliminar">Eliminar</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

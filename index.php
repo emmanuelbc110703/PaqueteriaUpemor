@@ -93,7 +93,7 @@ switch ($action) {
         $controllerInstance->consultarpaquete();
         break;
 
-    case 'updatePaquete':
+    case 'actualizarpaquete':
         $controllerInstance->actualizarpaquete();
         break;
 
